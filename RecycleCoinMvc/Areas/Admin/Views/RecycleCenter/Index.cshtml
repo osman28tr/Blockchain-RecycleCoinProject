@@ -1,0 +1,127 @@
+﻿@using RecycleCoin.Entities.Concrete
+@using RecycleCoinMvc.Models
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<style>
+    .category-image {
+        width: 7rem;
+        height: auto;
+    }
+
+    .image-row {
+        height: 90%;
+    }
+
+        .image-row .col-12 {
+            height: 130px;
+        }
+</style>
+
+<section style="width: 100%; margin-top: -18px; padding-top: 180px; padding-bottom: 70px; background: linear-gradient(230deg, red, #ff00cb); min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div id="recyclePanel" style="width: 63rem;height: 44rem;z-index: 1">
+        <div class="container h-100">
+            <div style="display: flex;margin-top: 23px;margin-top: 23px;align-content: space-around;justify-content: space-evenly;align-items: center;">
+                <h2 style="margin-left: 200px">Geri Dönüşüm Merkezi</h2>
+                
+                <button id="QrReadBtn" class="btn ConfirmBtn" type="submit" style="max-width: 176px; height: 69px;">
+
+                    <img style="max-width: 35px; filter: invert(1); margin-top: -3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAACZElEQVR4nO3bTU4VQRSG4RfDIoAR6CbEgQKrMO5CWYziSlSEXfizAR0gIy+JznDQELxJV253VXWf06e+J6lJJ7fqdL7u+9d1QEREREREREREZJxj4D3wDbgBbjPHzd0cZ8BRQ/VlewJckH9Cm8Y5cBC4viLPgOsNBdYYv4DDgPUV2QeuCgsfM67pruYo9RX7PMFJbBqXgeorcjLTCfWNIR983utb82jsC4CXieN/gTfALrCVOfaA07u5xqy9pPqKfac//dcV1zhNrPE1QH3FVonFdyqusZNY43eA+tZsZSx+W3GuKdbxXt+anM8AqUgBGNueYY3UrXqv9lvDWKb16Q4wpgCMKQBjCsCYAjCmAIwpAGNz/A6w/p6/iWl9ugOMKQBjOQGsEsdr/t27lzg+9O/oPl7qW5MTwM/E8VcZc6Wk5vox4LXe6yt2Rv/DiD88PPLLtcvDI7++Nd4GqK/YcWLxOcbzAPVV8WmmE/p/fAhUXzGLjU+PA9VXxSHdtrypT+4KeBqwvioOmPZ2/0h3NUetr5oXwDu6fTGpbSFDxgr4QvdtouYHmvf6RERERERERvPUhztmPcs5q/DYh9tMAF77cJsIwHMfbhMBeO7DDR+A9z7cRQUQsU84PO99uIu6A3J478NdVAAt9QnnzDXlnID2hpqbY3v63MZcgUOv7Mm2sKtP2JjegowpAGMKwJgCMKYAjCkAYwrAmPqEjUX8Jaz/gmS4iH3CixKxTzg87324i3ogk8N7H274AMB3H24TAXjuw20iAPDbh9tMAOCzD7epAO556sNtMgAREREREREREfHvHzThkTRW/D6bAAAAAElFTkSuQmCC">
+                    &nbsp;Qr Okut
+                </button>
+
+            </div>
+            <div class="h-75">
+                <form class="form-row h-100">
+                    <div class="col-7 h-100">
+	                    <div class="form-group">
+		                    <label for="toAddress">Alıcı Adres</label>
+		                    <input class="form-control" type="text" required id="toAddress">
+	                    </div>
+	                    <div id="userInfoFromAddress">
+	                    </div>
+                        <div class="form-row h-75" style="margin-top: 47px;">
+                            <div class="col-4 h-100">
+
+
+                                <h4>Kategoriler</h4>
+                                <div id="categories" class="image-row form-row justify-content-center" style="overflow-y: auto;">
+                                    @Html.Partial("_categoriesPartial")
+                                </div>
+
+                            </div>
+                            <div class="col-8 h-75" style="overflow-y: auto;margin-top: 27px;">
+                                <div class="form-row h-100" id="products" style="overflow-y: auto; width: 100%; padding-left: 16px;">
+                                    @Html.Partial("_productsPartial")
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5 d-flex flex-row justify-content-end align-items-start mx-auto"
+                         style="margin-top: 17px;">
+                        <div class="d-flex flex-column flex-grow-0 w-75 overflow-auto" id="cart" style="height: 258px;transition: 1s; transform: scale(0);opacity: 0;transform-origin: 120% 0;">
+                            @Html.Partial("_cartPartial")
+                        </div>
+                        <button class="btn btn-outline-success btn-lg text-dark" id="cartViewer" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -32 576 576"
+                                 width="1em" height="1em" fill="currentColor">
+                                <path d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="w-100 text-center">
+
+                        <button class="btn btn-outline-success btn-lg text-dark float-right" id="recycleSubmit"
+                                type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em"
+                                 fill="currentColor">
+                                <path d="M180.2 243.1C185 263.9 162.2 280.2 144.1 268.8L119.8 253.6l-50.9 81.43c-13.33 21.32 2.004 48.98 27.15 48.98h32.02c17.64 0 31.98 14.32 31.98 31.96c0 17.64-14.34 32.05-31.98 32.05H96.15c-75.36 0-121.3-82.84-81.47-146.8L65.51 219.8L41.15 204.5C23.04 193.1 27.66 165.5 48.48 160.7l91.43-21.15C148.5 137.7 157.2 142.9 159.2 151.6L180.2 243.1zM283.1 78.96l41.25 66.14l-24.25 15.08c-18.16 11.31-13.57 38.94 7.278 43.77l91.4 21.15c8.622 1.995 17.23-3.387 19.21-12.01l21.04-91.43c4.789-20.81-17.95-37.05-36.07-25.76l-24.36 15.2L337.4 45.14c-37.58-60.14-125.2-60.18-162.8-.0617L167.2 56.9C157.9 71.75 162.5 91.58 177.3 100.9c14.92 9.359 34.77 4.886 44.11-10.04l7.442-11.89C241.6 58.58 270.9 59.33 283.1 78.96zM497.3 301.3l-16.99-27.26c-9.336-14.98-29.06-19.56-44.04-10.21c-14.94 9.318-19.52 29.15-10.18 44.08l16.99 27.15c13.35 21.32-1.984 49-27.14 49h-95.99l.0234-28.74c0-21.38-25.85-32.09-40.97-16.97l-66.41 66.43c-6.222 6.223-6.222 16.41 .0044 22.63l66.42 66.34c15.12 15.1 40.95 4.386 40.95-16.98l-.0234-28.68h95.86C491.2 448.1 537.2 365.2 497.3 301.3z">
+                                </path>
+                            </svg>&nbsp;Geri Dönüştür
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="QrPanel" style="position: absolute; width: 32rem; height: 32rem;opacity: 0; right: 40rem;">
+        @Html.Partial("_qrPanelParial")
+    </div>
+</section>
+
+<style type="text/css">
+    #QrPanel.activeQrPanel {
+        opacity: 1 !important;
+        right: 8rem !important;
+    }
+
+    #recyclePanel.activeQrPanel {
+        margin-left: -600px;
+    }
+
+    #QrPanel, #recyclePanel {
+        box-shadow: 0px 0px 20px 1px;
+        border-radius: 25px;
+        transition: .7s;
+        background: #ffffff;
+        display: flex;
+    }
+</style>
+
+<script type="text/javascript" src="~/Scripts/qrScannerApi.js"></script>
+
+<script type="text/javascript">
+    $("#toAddress").on("input",function () {
+        const address = $("#toAddress").val();
+        $("#toAddress").val(address);
+        $("#userInfoFromAddress").load(`/Admin/RecycleCenter/GetUserFromAddress?toAddress=${address}`);
+    });
+</script>

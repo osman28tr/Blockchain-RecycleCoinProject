@@ -1,0 +1,44 @@
+﻿@using RecycleCoin.Entities.Concrete
+@{
+	var products = Session["products"] as List<Product>;
+
+}
+
+@if (products != null)
+{
+	
+	foreach (var product in products)
+	{
+		<div class="col-6 d-flex flex-column" style="height: 77px; border-style: groove;">
+			<p class="text-center" style="margin-bottom: 0px;">@product.Name</p>
+			<div class="d-flex justify-content-between position-relative" style="bottom: -7px; background: var(--white); height: 25px; width: 100%;">
+				<input class="form-control" name="amount" type="number" min="1" style="font-size: 11px; width: 43%" value="1">
+				<p style="font-size: 17px;">(@product.Carbon c)</p>
+				<a @*href="/Admin/RecycleCenter/AddToCart?productId=@product.Id&quantity="*@ class="btn btn-outline-success product" data-productId="@product.Id" type="button" style="padding-top: 0px; padding-right: 3px; padding-left: 3px;">
+					<i class="typcn typcn-tick position-relative" style="color: var(--teal); font-size: 22px; bottom: 6px;"></i>
+				</a>
+			</div>
+		</div>
+	}
+}
+<script type="text/javascript">
+    $(".product").click(function () {
+        const productId = parseInt(this.dataset["productid"]);
+        const quantity = parseInt(this.parentElement.parentElement.children[1].children[0].value);
+
+        //$.ajax({
+        //    type: "POST",
+        //    url: "/Admin/RecycleCenter/AddToCart",
+        //    data: { productId: productId, quantity: quantity },
+        //    success: function (response) {
+        //        console.log(response);
+        //        // response ile gelen verileri kullanarak update işlemi gerçekleştirilecek
+        //    }
+        //});
+        //location.reload();
+
+        $("#cart").load("/Admin/RecycleCenter/AddToCart?productId=" + productId + "&quantity=" + quantity)
+
+	});
+
+</script>

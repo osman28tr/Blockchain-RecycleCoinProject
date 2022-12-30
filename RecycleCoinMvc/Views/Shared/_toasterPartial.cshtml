@@ -1,0 +1,44 @@
+﻿@model dynamic
+
+@{
+	ViewBag.toast = Session["toast"];
+}
+
+@if (ViewBag.toast != null)
+{
+	var toast = ViewBag.toast;
+
+	<div class="float-right" aria-live="polite" aria-atomic="true" style="top:100px;">
+		<div class="toast fade rubberBand animated position-fixed" role="alert" id="Mytoast"
+		     style="position: absolute;top: 115px;right: 15px;z-index: 10;" data-autohide="true" data-delay="10">
+			<div class="toast-header bg-light">
+				<img class="mr-2">
+				<strong class="mr-auto">@toast.Title</strong>
+				@* title *@
+				<button class="close ml-2 mb-1 close" data-dismiss="toast">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="toast-body bg-@toast.MessageType text-light" role="alert">
+				@* success / danger *@
+				<p>@toast.Message</p>
+				@* message *@
+			</div>
+		</div>
+	</div>
+	Session.Remove("toast");
+
+
+	<script type="text/javascript">
+		$("#Mytoast").toast({ delay: 5000 });
+
+		var ToastViewer = () => {
+			console.log("dee");
+			$("#Mytoast").toast("show");
+
+		}
+		ToastViewer();
+	</script>
+
+
+}

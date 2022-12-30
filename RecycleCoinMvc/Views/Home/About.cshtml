@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "About";
+	var blockchain = ViewBag.Message;
+}
+
+
+<h2>@ViewBag.Title.</h2>
+<p>@ViewBag.Message["chain"]</p>
+
+<p>Use this area to provide additional information.</p>
+
+@for (int i = 0; i < blockchain["chain"].Count; i++)
+{
+	<p> @blockchain["chain"][i]</p>
+	<hr/>
+	<hr/>
+	<hr/>
+	
+}

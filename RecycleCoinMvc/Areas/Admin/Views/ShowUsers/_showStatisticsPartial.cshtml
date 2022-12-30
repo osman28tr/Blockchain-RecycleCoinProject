@@ -1,0 +1,56 @@
+﻿@using RecycleCoin.Entities.Concrete
+@{
+    var bestAmount = ViewBag.bestAmount;
+    var bestUser = ViewBag.bestUser as AppUser;
+	var filterday = ViewBag.filterday;
+}
+
+
+<div id="statistic" style="">
+    <div class="bubble">
+        <div class="h-100 w-100 bubbleSub">
+	        <ul>
+		        <li>
+			        Son <input id="dayInput" type="number" min="1" class="form-control d-inline-block" style="font-size: 14px;width: 34%" value="@filterday"/> günde
+		        </li>
+		        @if (bestUser != null)
+		        {
+			        <li>
+				        Ençok Geri dönüşüm yapan Kullanıcı : 
+			        </li>
+			        <li style="font-weight: bold">
+				        @bestUser.Name @bestUser.Lastname
+			        </li>
+			        <li>
+				        Yaptığı geri dönüşüm sayısı : @bestAmount 
+			        </li>
+		        }
+
+	        </ul>
+	        <div class="w-100 text-right">
+
+				<button id="statisticPanelCloseBtn" class="btn btn-primary">Kapat</button>
+	        </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<script>
+    $("#dayInput").change(function () {
+        $("#statisticsPanel").load(`/Admin/ShowUsers/GetStatistic?filterday=${parseInt(this.value)}`);
+	});
+    $("#statisticPanelCloseBtn").click(function () {
+	    $("#statisticsPanel").removeClass("activeStatisticPanel");
+	    $("#showStatisticsBtn i").removeClass("activeStatisticBtn");
+
+    });
+</script>
+
+
+
+
+

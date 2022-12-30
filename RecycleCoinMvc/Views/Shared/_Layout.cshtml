@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ASP.NET Uygulamam</title>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>*@
+
+    <link rel="stylesheet" href="../../Content/styles.min.css" />
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+
+</head>
+<body>
+
+
+	
+@{
+		Html.RenderPartial("_navbar");
+        Html.RenderPartial("_exchangeRatePartial");
+    }
+
+    @RenderBody()
+    <footer class="py-5 bg-black">
+        <div class="container">
+            <p class="text-center text-white m-0 small">Tüm Telif Hakları Saklıdır © RecycleCoin 2022</p>
+        </div>
+    </footer>
+    @{
+        Html.RenderPartial("_toasterPartial");
+    }
+
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="../../Scripts/ShowTransactionInfosOfBlock.js"></script>
+    <script type="text/javascript" src="../../Scripts/Exchange-rate.js"></script>
+    <script type="text/javascript" src="../../Scripts/cart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://kit.fontawesome.com/8d11be13db.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: 'http://localhost:5000/api/Transaction/getPendingTransactionCount',
+                type: 'GET',
+                success: function (data) {
+                    document.getElementById("pendingTransactionCount").innerHTML = data;
+                }
+            });
+        });
+    </script>
+    <script src="../../Scripts/addProductAndCategory.js"></script>
+    <script src="../../Scripts/UpdateProduct.js"></script>
+    
+
+
+
+</body>
+</html>

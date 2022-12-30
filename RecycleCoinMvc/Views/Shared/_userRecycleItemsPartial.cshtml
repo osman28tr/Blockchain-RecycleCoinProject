@@ -1,0 +1,27 @@
+﻿@using RecycleCoin.Entities.Concrete
+@{
+	var userRecycleItemInfos = ViewBag.UserRecycleItemInfos as ICollection<UserRecycleItem>;
+
+}
+
+
+@if (userRecycleItemInfos != null)
+{
+
+	foreach (var userRecycleItemInfo in userRecycleItemInfos)
+	{
+		var adetCarbon = userRecycleItemInfo.RecycleCarbon / userRecycleItemInfo.Amount;
+
+		<li class="userListItem row m-3 mb-4" data-userId=@userRecycleItemInfo.User.Id style="cursor: pointer">
+
+			<div class="col">@userRecycleItemInfo.User.Name</div>
+			<div class="col">@userRecycleItemInfo.User.Lastname</div>
+			<div class="col">@userRecycleItemInfo.Amount</div>
+			<div class="col" style="min-width: 200px">@userRecycleItemInfo.Product.Name (@adetCarbon c)</div>
+			<div class="col">@userRecycleItemInfo.RecycleCarbon</div>
+			<div class="col">@userRecycleItemInfo.RecycleDate</div>
+		</li>
+
+	}
+}
+<script src="~/Scripts/UserRecycle.js"></script>

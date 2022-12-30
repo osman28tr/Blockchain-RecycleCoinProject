@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecycleCoinMvc", "RecycleCoinMvc\RecycleCoinMvc.csproj", "{2C0D8706-AF91-4622-9484-BA25C2944512}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecycleCoin.DataAccess", "RecycleCoin.DataAccess\RecycleCoin.DataAccess.csproj", "{48ECA61F-AADD-4DF7-AA32-7D2D1628CEFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecycleCoin.Business", "RecycleCoin.Business\RecycleCoin.Business.csproj", "{E3BCED85-ED90-4A4A-9043-53172CBE8197}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecycleCoin.Entities", "RecycleCoin.Entities\RecycleCoin.Entities.csproj", "{15825713-87EE-4E9D-A851-D59732C35221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecycleCoin.Shared", "RecycleCoin.Shared\RecycleCoin.Shared.csproj", "{CEFD614A-8741-4E2D-A6A4-D6BDA7C2D627}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecycleCoin.Test", "RecycleCoin.Test\RecycleCoin.Test.csproj", "{09DD5CA7-AE23-4E74-9FEA-3ED250634B90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C0D8706-AF91-4622-9484-BA25C2944512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0D8706-AF91-4622-9484-BA25C2944512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0D8706-AF91-4622-9484-BA25C2944512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0D8706-AF91-4622-9484-BA25C2944512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48ECA61F-AADD-4DF7-AA32-7D2D1628CEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48ECA61F-AADD-4DF7-AA32-7D2D1628CEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48ECA61F-AADD-4DF7-AA32-7D2D1628CEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48ECA61F-AADD-4DF7-AA32-7D2D1628CEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3BCED85-ED90-4A4A-9043-53172CBE8197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3BCED85-ED90-4A4A-9043-53172CBE8197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3BCED85-ED90-4A4A-9043-53172CBE8197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3BCED85-ED90-4A4A-9043-53172CBE8197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15825713-87EE-4E9D-A851-D59732C35221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15825713-87EE-4E9D-A851-D59732C35221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15825713-87EE-4E9D-A851-D59732C35221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15825713-87EE-4E9D-A851-D59732C35221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFD614A-8741-4E2D-A6A4-D6BDA7C2D627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFD614A-8741-4E2D-A6A4-D6BDA7C2D627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFD614A-8741-4E2D-A6A4-D6BDA7C2D627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEFD614A-8741-4E2D-A6A4-D6BDA7C2D627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09DD5CA7-AE23-4E74-9FEA-3ED250634B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09DD5CA7-AE23-4E74-9FEA-3ED250634B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09DD5CA7-AE23-4E74-9FEA-3ED250634B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09DD5CA7-AE23-4E74-9FEA-3ED250634B90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AEAE58D8-59C7-4B84-A351-8EA187F3C1A5}
+	EndGlobalSection
+EndGlobal

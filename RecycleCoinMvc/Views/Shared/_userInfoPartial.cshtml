@@ -1,0 +1,61 @@
+﻿@using RecycleCoin.Entities.Concrete
+@{
+    var user = ViewBag.User as AppUser;
+	var userRecycleCoin = ViewBag.userRecycleCoin ;
+}
+
+@if (user != null)
+{
+
+    <div id="info" style="">
+        <div class="bubble">
+            <div class="h-100 w-100 bubbleSub">
+                <ul>
+
+                    <li>Ad Soyad : @user.Name @user.Lastname</li>
+                    <li>Kullanıcı Adı : @user.UserName</li>
+                    <li>Email : @user.Email</li>
+	                <li>Toplam karbon : @user.Carbon</li>
+                    <li>Recycle Coin : @userRecycleCoin <img alt="RC" style="width: 30px;" src="~/image/transparent.png"/></li>
+
+                </ul>
+
+                <input id="publicKey" type="text" style="display: none" value="@user.PublicKey" />
+                <div class="w-100" style="text-align-last: justify;">
+
+                    <button id="copyPublicBtn" class="btn btn-success">Public Key Kopyala</button>
+
+                    <button id="infoClose" class="btn btn-primary">Kapat</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+<script>
+
+    $("#infoClose").click(function () {
+
+
+        $("#userInfo").css({
+            "left": "-300px",
+            "transform": "scaleX(0)"
+        })
+        $("#info .bubble").css(
+            {
+                "left": "-300px",
+                "transform": "scaleX(0)"
+            });
+    })
+
+    $("#copyPublicBtn").click(function () {
+
+        $("#publicKey").css("display", "block").focus().select();
+        document.execCommand("copy");
+        $("#publicKey").css("display", "none");
+        console.log("public key is copied!");
+    });
+
+</script>

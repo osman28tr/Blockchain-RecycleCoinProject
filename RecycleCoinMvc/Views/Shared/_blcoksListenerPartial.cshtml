@@ -1,0 +1,70 @@
+﻿@using RecycleCoinMvc.Models
+@{
+    var blockchain = Model as BlockchainSchema;
+}
+@if (blockchain != null)
+{
+	var chain = blockchain.chain;
+
+    for (var i = 0; i < chain.Count; i++)
+    {
+        var block = chain[i];
+        <div class="card block" data-aos="zoom-in-down" data-aos-duration="600"
+             style="margin: 25px; min-width: 300px; max-width: 300px;" data-hash="@block.hash">
+            <div class="card-header">
+                <h4 class="text-light">
+                    Block
+                    @{
+                        var d = i + 1;
+                    }
+                    @d
+                </h4>
+            </div>
+            <ul class="list-group list-group-flush list-group-flush">
+                <li class="list-group-item"
+                    style="padding-bottom: 0px; padding-right: 20px; padding-top: 24px;">
+                    <p style="margin-bottom: -17px;">Hash</p>
+                    <small>
+                        <br>
+                        <span>
+                            @block.hash
+                        </span><br><br><br>
+                    </small>
+                    <p style="margin-top: -16px; margin-bottom: -11px;">Hash of previous block<br></p>
+                    <small>
+                        <br><span>@block.previousHash</span><br><br><br>
+                    </small>
+                </li>
+                <li class="list-group-item" style="padding-bottom: 0px;">
+                    <p style="margin-bottom: 8px;">Nonce<br></p>
+                    <p style="font-size: 15px; color: #6127cb;">@block.nonce</p>
+                </li>
+                <li class="list-group-item">
+                    <p style="margin-bottom: 8px;">Timestamp<br></p>
+                    <p style="font-size: 15px; color: #2c8f36;">@block.timestamp</p>
+                </li>
+            </ul>
+        </div>
+    }
+}
+
+else
+{
+
+    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center" style="min-height: 200px;width: 100%">
+
+        <!-- Then put toasts within -->
+        <div class="toast show bg-danger text-light" style="max-width: 450px;flex-basis: 450px" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="mr-auto">Bağlantı Hatası</strong>
+            </div>
+            <div class="toast-body">
+                Blockchain Bağlantısı Kurulamadı Lütfen   &nbsp;
+                <a href="/" class="btn btn-outline-warning" data-bss-disabled-mobile="true" data-bss-hover-animate="rubberBand" type="button">
+                    Tekrar Deneyin
+                </a>
+            </div>
+        </div>
+    </div>
+
+}

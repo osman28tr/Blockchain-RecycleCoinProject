@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+
+<!-- Start: login form - Ambrodu -->
+<div class="body" style="padding-top: 150px; margin-top: -18px; padding-bottom: 120px">
+    @Html.ValidationSummary()
+    <div class="border rounded shadow login-center"
+         style="padding: 2rem 0 2rem 0; margin-right: auto; margin-left: auto; width: 547.275px;">
+        @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @style = "padding-top: 32px;" }))
+        {
+        @Html.AntiForgeryToken()
+        <div class="form-group text-center">
+            <!-- Start: default image -->
+            <img class="img-fluid" style="width: 100px;"
+                 src="../../image/default.png"><!-- End: default image -->
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <input class="form-control" type="text" name="TcNo"
+                   id="regTc" style="width: 200px;" placeholder="Tc kimlik numaranız">
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <input class="form-control" type="text" name="Name"
+                   id="regName" style="width: 200px;" placeholder="Ad">
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <input class="form-control" type="text" name="Lastname"
+                   id="regLastname" style="width: 200px;" placeholder="Soyad">
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <input class="form-control" type="text" name="Year"
+                   id="regYear" style="width: 200px;" placeholder="Doğum yılınız">
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <input class="form-control" type="text" name="Email"
+                   id="regEmail" style="width: 200px;" placeholder="E-Posta">
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <input class="form-control" type="text" name="Username"
+                   id="regUsername" style="width: 200px;" placeholder="Kullanıcı Adı">
+        </div>
+        <div class="form-group d-flex justify-content-center">
+            <input class="form-control" type="password" name="Password"
+                   id="regPassword" style="width: 200px;" placeholder="Parola">
+        </div>
+        <div class="form-group d-flex" style="flex-direction: column-reverse;flex-wrap: wrap;align-content: space-around;align-items: center;justify-content: space-around;height: 90px;">
+            <button class="btn btn-dark" style="width: 200px;"
+                    type="submit">
+                Kayıt Ol
+            </button>
+            <div class="custom-control custom-checkbox ml-4 mr-sm-2">
+                <input type="checkbox" class="custom-control-input" id="customControlAutosizing" name="IsNotTcPerson" value="true">
+                <label class="custom-control-label" for="customControlAutosizing">Tc Vatandaşı değilim veya kimlik numaramı vermek istemiyorum.</label>
+            </div>
+        </div>
+        }
+    </div>
+</div><!-- End: login form - Ambrodu -->

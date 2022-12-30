@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<!-- Start: login form - Ambrodu -->
+<div class="body" style="padding-top: 150px; margin-top: -18px;">
+    @Html.ValidationSummary()
+    <div class="border rounded shadow login-center" style="width: 547.275px;margin-right: auto;margin-left: auto;">
+        @using (Html.BeginForm("Login", "User", FormMethod.Post, new { @style = "padding-top: 54px;" }))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl"/>
+            <div class="form-group text-center">
+                <!-- Start: default image -->
+                <img class="img-fluid" style="width: 100px;"
+                     src="../../image/default.png"><!-- End: default image -->
+            </div>
+            <div class="form-group d-flex justify-content-center">
+                <input class="form-control" type="text" name="username"
+                       style="width: 200px;" placeholder="Kullanıcı Adı">
+            </div>
+            <div class="form-group d-flex justify-content-center">
+                <input class="form-control" type="password" name="password"
+                       style="width: 200px;" placeholder="Parola">
+            </div>
+            <div class="form-group d-flex justify-content-center">
+                <button class="btn btn-dark" style="width: 200px;"
+                        type="submit">
+                    Giriş Yap
+                </button>
+            </div>
+        }
+    </div>
+</div><!-- End: login form - Ambrodu -->

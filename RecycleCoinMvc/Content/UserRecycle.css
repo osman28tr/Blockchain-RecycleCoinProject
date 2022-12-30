@@ -1,0 +1,166 @@
+﻿@property --rotate {
+    /* ReSharper disable once CssNotResolved */
+    syntax: "<angle>";
+    /* ReSharper disable once CssNotResolved */
+
+    initial-value: 132deg;
+    /* ReSharper disable once CssNotResolved */
+
+    inherits: false;
+}
+
+.orderByGroup i {
+    transition: .3s;
+}
+
+.orderBy {
+    transform: rotate(-90deg);
+}
+
+.orderBydesc {
+    transform: rotate(90deg);
+}
+
+.notOrderBy {
+    transform: rotate(0);
+}
+
+#userListBody {
+    background: #212534;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+#userRecycleItems {
+    list-style-type: none;
+    padding-inline-start: 0;
+    z-index: 3;
+}
+
+.userListItem {
+    background: #191c29;
+    width: 750px;
+    min-height: 50px;
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    color: #add8e6;
+    font-family: cursive;
+}
+
+    .userListItem.row:before {
+        content: "";
+        width: 102%;
+        height: 116%;
+        border-radius: 8px;
+        background-image: linear-gradient( var(--rotate), #5ddcff,#00fa9a, #4e00c2, #4e00c2,#00fa9a,#5ddcff);
+        position: absolute;
+        z-index: -1;
+        top: -8%;
+        left: -1%;
+        animation: spin 3s cubic-bezier(0, 0, 0, 0) infinite;
+        transition: 1.3s;
+    }
+
+    .userListItem.row:hover:before {
+        background-image: linear-gradient( var(--rotate), #b22222,#ff00ff, #00fa9a, #ff00ff,#b22222);
+    }
+
+.bubble {
+    color: #FFFFFF;
+    font-family: Abril Fatface;
+    font-size: 16px;
+    box-shadow: 5px 5px 10px 0px #3c0000;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 42px;
+    padding: 20px;
+    left: 0;
+    transform: scaleX(1);
+    transition: 1.2s ease;
+    background: #212534;
+    z-index: 5;
+}
+
+    .bubble .bubbleSub {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-around;
+        align-items: flex-end;
+    }
+
+    .bubble ul {
+        list-style-type: none;
+        text-align: left;
+        line-height: 2;
+        padding: 0;
+    }
+
+/*    .bubble .btn.btn-primary {
+        position: absolute;
+        bottom: 15px;
+        right: 26px;
+    }
+
+    .bubble ul li {
+        margin: -65px;
+    }
+*/
+
+
+#userInfo:before, #statisticsPanel:before {
+    content: "";
+    background-image: linear-gradient( var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    width: 106%;
+    animation: spin 3s cubic-bezier(0, 0, 0, 0) infinite;
+    height: 106%;
+    transform: translate(-2%,-2%);
+    position: absolute;
+    border-radius: 42px;
+}
+
+
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+
+    25% {
+        --rotate: 90deg;
+    }
+
+    50% {
+        --rotate: 180deg;
+    }
+
+    75% {
+        --rotate: 270deg;
+    }
+
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+@keyframes load {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

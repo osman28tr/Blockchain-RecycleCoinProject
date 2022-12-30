@@ -1,0 +1,16 @@
+﻿@using RecycleCoin.Entities.Concrete
+@{
+	if (Model is AppUser user)
+    {
+	    <h6 id="addressInfo"> Ad Soyad : @user.Name @user.Lastname</h6>
+	    
+    }
+}
+<script type="text/javascript">
+	if ($("#addressInfo")[0]) {
+		$("#toAddress").css("border", "4px solid greenyellow");
+	} else {
+		$("#toAddress").css("border", "4px solid red");
+
+	}
+</script>

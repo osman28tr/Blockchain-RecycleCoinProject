@@ -1,0 +1,21 @@
+﻿@using RecycleCoin.Entities.Concrete
+@{
+    var categories = ViewBag.categories as List<Category>;
+
+}
+@foreach (var category in categories)
+{
+    <div class="col-12 d-flex justify-content-center align-items-center">
+        <a href="#" class="getProductsByCategoryId" data-categoryid="@category.Id">
+            <img data-bss-hover-animate="rubberBand" id="papers" class="category-image" src="~/image/@category.Image" alt="@category.Name">
+        </a>
+    </div>
+}
+<script>
+
+    $(".getProductsByCategoryId").click(function () {
+
+        $("#products").load("/Admin/RecycleCenter/GetProductsByCategory?categoryId=" + this.dataset['categoryid']);
+
+    });
+</script>
