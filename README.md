@@ -1,5 +1,5 @@
 <h1>Recycle Coin Project</h1>
-In the project, users recycle the waste they have collected and earn carbon in return. They convert these carbons into recycle coins. This project is inspired by the blockchain system. Users have accounts in the project. There are blocks where these accounts are kept safe. Users mine by performing transactions in these accounts.
+<p align="justify">In the project, users recycle the waste they have collected and earn carbon in return. They convert these carbons into recycle coins. This project is inspired by the blockchain system. Users have accounts in the project. There are blocks where these accounts are kept safe. Users mine by performing transactions in these accounts.</p>
 
 <h3>1.Project Requirements</h3>
 <ul>
