@@ -16,6 +16,9 @@
 <h3>2.Used Technologies</h3>
 Asp.Net Mvc ,EntityFramework,An api written in Python, An api written in Node.js,MongoDb,MySQL,Basic Architecture, tc authentication with Mernis Service,Css,Html,JavaScript
 <br><br>
+<h3>3.General Outlines of the Architecture Used in the Project</h3>
+<img src="RecycleCoinMvc/image/ArchImages/RecycleCoinProjectArch.PNG" height="400px" width="600px">
+<br><br>
 <b>Note:</b> The project was developed together with my dear friend Muhammed Mustafa Uçar.
 The blockchain-related transactions of the project are available in the link below.<br>
 
