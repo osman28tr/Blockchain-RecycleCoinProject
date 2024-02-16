@@ -18,7 +18,6 @@ Asp.Net Mvc ,EntityFramework,An api written in Python, An api written in Node.js
 <br>
 <h3>3.General Outlines of the Architecture Used in the Project</h3>
 <img src="RecycleCoinMvc/image/ArchImages/RecycleCoinProjectArch2.PNG" height="400px" width="600px">
-<br><br>
 
 <h3>4. Setup: </h3>
  - Open RecycleCoinMvc -> Web.config file in the project, update the database connection string in the   connectionString property specified with connectionstrings tags according to your database connection string.<br>
