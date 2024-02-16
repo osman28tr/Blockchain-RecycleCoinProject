@@ -19,6 +19,14 @@ Asp.Net Mvc ,EntityFramework,An api written in Python, An api written in Node.js
 <h3>3.General Outlines of the Architecture Used in the Project</h3>
 <img src="RecycleCoinMvc/image/ArchImages/RecycleCoinProjectArch2.PNG" height="400px" width="600px">
 <br><br>
+
+<h3>4. Setup: </h3>
+ - Open RecycleCoinMvc -> Web.config file in the project, update the database connection string in the   connectionString property specified with connectionstrings tags according to your database connection string.<br>
+ - Then, click on view -> other windows -> package manager console from the top tab of the Visual Studio tool.<br>
+ - Then, click on the default project in the window that opens and select the RecycleCoin.DataAccess layer from the selection screen that opens.<br>
+ - Type "update-database" in the window that opens and click enter. (The relevant database and tables will be created in SSMS.)<br>
+ - Then right-click on the RecycleCoinMvc project, select "Set as Startup Project" and start the project.
+<br><br>
 <b>Note:</b> The project was developed together with my dear friend Muhammed Mustafa Uçar.
 The blockchain-related transactions of the project are available in the link below.<br>
 
