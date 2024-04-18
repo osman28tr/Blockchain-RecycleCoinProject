@@ -1,7 +1,8 @@
 <h1>Recycle Coin Project</h1>
+<h3>1. Entrance</h3>
 <p align="justify">In the project, users recycle the waste they have collected and earn carbon in return. They convert these carbons into recycle coins. This project is inspired by the blockchain system. Users have accounts in the project. There are blocks where these accounts are kept safe. Users mine by performing transactions in these accounts.</p>
 
-<h3>1.Project Requirements</h3>
+<h3>2.Project Requirements</h3>
 <ul>
     <li>Let each object have its own conversion score. For example: 50 carbon for a 0,5lt plastic bottle, 150 carbon for a 1,5lt plastic bottle, 330 carbon for a 0,33 aleminium coke can, 25 carbon for a 1 newspaper, etc. (The data can be stored in a DB).
     </li>
@@ -13,13 +14,13 @@
     </li>
 </ul>
 
-<h3>2.Used Technologies</h3>
+<h3>3.Used Technologies</h3>
 Asp.Net Mvc ,EntityFramework,An api written in Python, An api written in Node.js,MongoDb,MySQL,Basic Architecture, TC authentication with Mernis Service,Css,Html,JavaScript
 <br>
-<h3>3.General Outlines of the Architecture Used in the Project</h3>
+<h3>4.General Outlines of the Architecture Used in the Project</h3>
 <img src="RecycleCoinMvc/image/ArchImages/RecycleCoinProjectArch2.PNG" height="400px" width="600px">
 
-<h3>4. Setup: </h3>
+<h3>5. Setup: </h3>
  - Open RecycleCoinMvc -> Web.config file in the project, update the database connection string in the   connectionString property specified with connectionstrings tags according to your database connection string.<br>
  - Then, click on view -> other windows -> package manager console from the top tab of the Visual Studio tool.<br>
  - Then, click on the default project in the window that opens and select the RecycleCoin.DataAccess layer from the selection screen that opens.<br>
